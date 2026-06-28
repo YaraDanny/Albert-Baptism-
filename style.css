@@ -7,7 +7,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Cairo',sans-serif;
-background:#f6f4ef;
+background:red !important;
 overflow-x:hidden;
 }
 
