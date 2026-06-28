@@ -9,87 +9,72 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ===== HERO SECTION ===== -->
 <section class="hero">
 
-  <!-- الصورة -->
   <img src="Hero.JPG" class="background" alt="background">
 
-  <!-- overlay -->
   <div class="overlay"></div>
 
-  <!-- النص -->
   <div class="hero-content">
 
-    <p class="small">🔔 دقّوا الجرس... وجهّزوا حالكم!</p>
+    <p class="small">دقوا الجرس... وجهزوا حالكم!</p>
 
     <h1>
-      لأنو صار الوقت يصير عندي أول موعد رسمي
-      مع الميّ المقدسة
+      لأنو صار الوقت<br>
+      يصير عندي أول موعد رسمي مع المي المقدسة!
     </h1>
 
-    <h2>بتشرّفوني بعمادتي</h2>
+    <h2>بتشرفوني بعمادتي أنا</h2>
 
-    <h3>Albert Kikoloff</h3>
+    <h3>Albert Kikollof</h3>
 
-    <p class="verse">
-      "دعوا الأولاد يأتون إليّ ولا تمنعوهم"
+    <!-- ✨ الآية -->
+    <p class="bible-verse">
+      "دعوا الأولاد يأتون إليّ ولا تمنعوهم، لأن لمثل هؤلاء ملكوت السماوات."
+      <br>
+      <span>متى 19:14</span>
     </p>
 
-    <a href="#details" class="gold-button">اكتشف الدعوة</a>
+    <p class="verse">الساعة 7:00 مساءً</p>
+
+    <p class="verse">كنيسة آجيا صوفيا - صيدنايا</p>
+
+    <p class="verse">
+      <a href="https://maps.app.goo.gl/PJXiw7kC6fboTWg87?g_st=iw" target="_blank">
+        📍 موقع الكنيسة
+      </a>
+    </p>
+
+    <p class="verse">السبت 2026 / 7 / 11</p>
+
+    <p class="verse">
+      وبعد ما نبارك المناسبة...<br>
+      لا تستعجلو الفرحة لسا بأولها
+    </p>
+
+    <p class="verse">الساعة 9:00 مساءً - مطعم جنة صيدنايا</p>
+
+    <p class="verse">
+      وجودكم هو أحلى هدية وأجمل بركة إلي.<br>
+      ناطرينكن بكل حب ❤️
+    </p>
 
   </div>
 
 </section>
 
-<!-- ===== DETAILS SECTION ===== -->
-<section id="details">
-
-  <div class="card">
-
-    <h2>📅 السبت 11 / 7 / 2026</h2>
-    <p>🕖 الساعة 7:00 مساءً</p>
-    <p>⛪ كنيسة آجيا صوفيا - صيدنايا</p>
-
-    <a class="maps" href="https://maps.app.goo.gl/PJXiw7kC6fboTWg87?g_st=iw" target="_blank">
-      📍 موقع الكنيسة
-    </a>
-
-  </div>
-
-  <div class="card">
-
-    <h2>🍽️ بعد الاحتفال</h2>
-    <p>مطعم جنّة - صيدنايا</p>
-    <p>الساعة 9:00 مساءً</p>
-
-  </div>
-
-  <div class="card">
-
-    <h2>💛 وجودكم بركة</h2>
-    <p>ناطركون بكل حب</p>
-
-  </div>
-
-  <div class="card">
-
-    <h2>📩 تأكيد الحضور</h2>
-
-    <a class="gold-button" href="https://wa.me/4915259804066" target="_blank">Yara</a>
-    <br><br>
-    <a class="gold-button" href="https://wa.me/491727463479" target="_blank">Danny</a>
-
-  </div>
-
-</section>
+<script>
+window.onload = function() {
+  setTimeout(() => {
+    document.querySelector(".hero").classList.add("show");
+  }, 3000);
+};
+</script>
 
 </body>
 </html>
