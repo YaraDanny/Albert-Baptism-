@@ -1,50 +1,97 @@
-function openWhatsApp(number){
-  window.open("https://wa.me/" + number, "_blank");
-}
+// ================================
+// ظهور الكتابة بعد 3 ثواني
+// ================================
 
-function playMusic(){
-  const music = document.getElementById("bgmusic");
-  music.play();
-}
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        document.querySelector(".hero").classList.add("show");
+
+    },3000);
+
+});
 
 
-// ================= COUNTDOWN =================
+// ================================
+// ظهور الكروت عند النزول
+// ================================
 
-const targetDate = new Date("2026-07-11T19:00:00").getTime();
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+cards.forEach(card=>{
+
+    observer.observe(card);
+
+});
+
+
+// ================================
+// عداد العماد
+// ================================
 
 const countdown = document.createElement("div");
 
-countdown.style.position = "fixed";
-countdown.style.top = "20px";
-countdown.style.left = "20px";
-countdown.style.background = "rgba(0,0,0,0.75)";
-countdown.style.color = "#f4d58d";
-countdown.style.padding = "14px 18px";
-countdown.style.borderRadius = "14px";
-countdown.style.fontWeight = "bold";
-countdown.style.fontSize = "15px";
-countdown.style.zIndex = "9999";
-countdown.style.backdropFilter = "blur(8px)";
+countdown.className="countdown";
 
 document.body.appendChild(countdown);
 
+const targetDate = new Date("2026-07-11T19:00:00").getTime();
+
 function updateCountdown(){
 
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+    const now = new Date().getTime();
 
-  if(distance < 0){
-    countdown.innerHTML = "🎉 اليوم الكبير وصل!";
-    return;
-  }
+    const distance = targetDate-now;
 
-  const days = Math.floor(distance / (1000*60*60*24));
-  const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-  const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+    if(distance<=0){
 
-  countdown.innerHTML =
-    "⏳ " + days + " يوم • " + hours + " ساعة • " + minutes + " دقيقة";
+        countdown.innerHTML="🎉 اليوم الكبير وصل!";
+
+        return;
+
+    }
+
+    const days=Math.floor(distance/(1000*60*60*24));
+
+    const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+    const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+
+    countdown.innerHTML=
+    "⏳ "+days+" يوم • "+hours+" ساعة • "+minutes+" دقيقة";
+
 }
 
 updateCountdown();
-setInterval(updateCountdown, 60000);
+
+setInterval(updateCountdown,60000);
+
+
+// ================================
+// تشغيل الموسيقى
+// ================================
+
+const music=document.getElementById("bgmusic");
+
+document.addEventListener("click",()=>{
+
+    music.play().catch(()=>{});
+
+},{once:true});
